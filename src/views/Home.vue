@@ -997,8 +997,10 @@ async function handleRedeemTicket(id) {
   }
 }
 
-async function proceedRedeemTicket(winners) {
+async function proceedRedeemTicket(winners, type) {
   try {
+    console.log(winners, type, "888888****");
+
     redeemTicketLoader.value = true;
 
     const response = await axios.post(`${url.url}/api/redeemBet`, {
@@ -1006,6 +1008,7 @@ async function proceedRedeemTicket(winners) {
       winners,
       username: auth?.user?.user,
       cashier: auth?.user?.cashier,
+      type,
     });
 
     if (response.data.success) {
