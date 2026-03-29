@@ -464,6 +464,10 @@ function nameHelper(name) {
   return gameName;
 }
 
+function handleProceedRedeem() {
+  emit("proceedRedeemTicket", winners, props.redeemTicket.type);
+}
+
 onMounted(() => {
   window.addEventListener("mousemove", onDrag);
   window.addEventListener("mouseup", stopActions);
