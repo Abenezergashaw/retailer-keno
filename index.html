@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://kendo.cdn.telerik.com;
+    font-src 'self' https://fonts.gstatic.com;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval';
+    img-src 'self' data: https:;
+    connect-src 'self' 
+                 https://playbitman.com 
+                 http://localhost:8000 
+                 http://localhost:8080 
+                 http://localhost:3000 
+                 http://127.0.0.1:8000 
+                 http://127.0.0.1:3000 
+                 http://127.0.0.1:8080;
+  "
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2023.3.1010/styles/kendo.default-v2-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <title>BetMan Online Retail</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
