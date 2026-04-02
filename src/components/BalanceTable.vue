@@ -26,8 +26,8 @@ const totals = computed(() =>
       if (item.isRedeemed === 1)
         acc[dateKey].redeemed += item.stake * Number(item.odd);
       return acc;
-    }, {})
-  )
+    }, {}),
+  ),
 );
 
 const selectedData = ref(null);
@@ -56,10 +56,7 @@ const selectedData = ref(null);
           <th class="px-4 py-2 text-left font-medium truncate">Redeemed</th>
           <th class="px-4 py-2 text-left font-medium truncate">Withdraws</th>
           <th class="px-4 py-2 text-left font-medium truncate">End Balance</th>
-          <th
-            class="px-4 py-2 text-left font-medium truncate"
-            v-if="auth?.user.createdBy == 'andualem'"
-          >
+          <th class="px-4 py-2 text-left font-medium truncate">
             Unclaimed Winnings
           </th>
           <!-- <th class="px-4 py-2 text-left font-medium text-gray-700">
@@ -110,11 +107,8 @@ const selectedData = ref(null);
             Br.
             {{ (data.bets - data.cancellations - data.redeemed).toFixed(2) }}
           </td>
-          <td
-            class="px-4 py-2 text-left truncate"
-            v-if="auth?.user.createdBy == 'andualem'"
-          >
-            Br. {{ data.unclaimed.toFixed(2) }}
+          <td class="px-4 py-2 text-left truncate">
+            Br. {{ data?.unclaimed.toFixed(2) }}
           </td>
         </tr>
       </tbody>
