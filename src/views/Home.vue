@@ -1187,7 +1187,7 @@ async function getTimeOffset() {
   }
 }
 
-getTimeOffset();
+// getTimeOffset();
 
 function handlekenoballsclicked(n) {
   const index = temporaryKenoBalls.value.findIndex((i) => i === n);
