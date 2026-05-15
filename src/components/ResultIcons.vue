@@ -4,6 +4,8 @@ const props = defineProps({
 });
 </script>
 <template>
+  <div v-if="game === 'SmartPlayKeno'">SmartPlayKeno</div>
+
   <div
     v-if="game === 'PlatinumHounds'"
     class="w-10 h-10 flex items-center justify-center text-[#8c8c8c]"

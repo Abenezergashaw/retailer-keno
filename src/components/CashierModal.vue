@@ -80,7 +80,7 @@ const totals = props.balanceData.reduce(
 
     return acc;
   },
-  { bets: 0, cancellations: 0, redeemed: 0 }
+  { bets: 0, cancellations: 0, redeemed: 0 },
 );
 const keyboard = [1, 2, 3, 4, 5, 6, 7, 8, 9, "L", 0, ""];
 
@@ -354,7 +354,10 @@ onBeforeUnmount(() => {
         </div>
         <div
           class="w-full h-full flex flex-col justify-start items-start mt-3"
-          style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif"
+          style="
+            font-family:
+              &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+          "
         >
           <div class="flex justify-between gap-1 w-full">
             <div class="flex gap-1">
@@ -705,7 +708,9 @@ onBeforeUnmount(() => {
               <ResultIcons :game="selectedResult.gamename" />
 
               <div class="flex flex-col gap-0 uppercase text-[#8c8c8c]">
-                <span>{{ selectedResult.place || "" }}</span>
+                <span v-if="selectedResult.gamename !== 'SmartPlayKeno'">{{
+                  selectedResult.place || ""
+                }}</span>
                 <span
                   >{{ toNairobiTime(selectedResult.date) }} ID
                   {{ selectedResult.gameid }}</span
@@ -714,6 +719,17 @@ onBeforeUnmount(() => {
             </div>
 
             <div
+              v-if="selectedResult.gamename === 'SmartPlayKeno'"
+              class="text-[#8c8c8c] flex flex-col gap-4 items-center justify-center"
+            >
+              <span>RESULTS</span>
+              <div class="flex justify-between gap-24 text-sm">
+                <div>{{ selectedResult.result }}</div>
+              </div>
+            </div>
+
+            <div
+              v-else
               class="text-[#8c8c8c] flex flex-col gap-4 items-center justify-center"
             >
               <span>RESULTS</span>
@@ -769,10 +785,6 @@ onBeforeUnmount(() => {
               </div>
             </div>
             <hr class="w-full border-8 mt-4" />
-            <div class="text-[#8c8c8c] text-sm text-center my-2">
-              Number of Participants:
-              {{ selectedResult.result.split(",").map(Number).length }}
-            </div>
           </div>
 
           <div
@@ -829,7 +841,7 @@ onBeforeUnmount(() => {
                   'changePassword',
                   currentPassword,
                   newPassword,
-                  confirmPassword
+                  confirmPassword,
                 )
               "
               class="font-roboto bg-[#37b34a] border border-[#37b34a] py-1.5 rounded flex justify-center items-center text-white cursor-pointer hover:bg-[#2B8C3A] px-2 w-16 text-sm"
