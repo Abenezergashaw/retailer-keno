@@ -355,9 +355,7 @@ onBeforeUnmount(() => {
         <div
           class="w-full h-full flex flex-col justify-start items-start mt-3"
           style="
-            font-family:
-              &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
-          "
+            font-family:"&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;          "
         >
           <div class="flex justify-between gap-1 w-full">
             <div class="flex gap-1">

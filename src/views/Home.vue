@@ -643,9 +643,14 @@ const handleWinClicked = (bet) => {
   handleComboClicked(bet.number, bet.id, true);
   betPlacedSuccess.value = false;
 
+  // console.log("Bet clicked:", bet);
+
   const index = selectedBets.value.findIndex(
     (b) =>
-      b.id === bet.id && b.betType === bet.betType && b.number === bet.number,
+      b.id === bet.id &&
+      b.betType === bet.betType &&
+      b.number === bet.number &&
+      b.name === bet.name,
   );
 
   if (index !== -1) {
